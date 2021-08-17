@@ -1,28 +1,28 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { DefaultComponent } from './layouts/default/default.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { PostsComponent } from './modules/posts/posts.component';
-import { ProductsComponent } from './modules/products/products.component';
-import { StringComponent } from './modules/string/string.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { LoginComponent } from './views/login/login.component';
+import { ProdutosComponent } from './views/produtos/produtos.component';
+import { PedidosComponent } from './views/pedidos/pedidos.component';
+import { HomeComponent } from './views/home/home.component';
+import { AuthGuard } from './guard/auth.guard';
+import { PedidoslistComponent } from './views/pedidoslist/pedidoslist.component';
 
-const routes: Routes = [{
-  path: '',
-  component: DefaultComponent,
-  children: [{
+const routes: Routes = [
+  {
     path: '',
-    component: DashboardComponent
-  }, {
-    path: 'posts',
-    component: PostsComponent
+    component: HomeComponent,
+    children: [
+      { path: 'produtos', component: ProdutosComponent },
+      { path: 'pedidos', component: PedidosComponent },
+      { path: 'pedidoslist', component: PedidoslistComponent },
+
+    ],
+    //canActivate: [AuthGuard]
   },
-  {
-    path: 'products', component: ProductsComponent
-  },
-  {
-    path: 'string', component: StringComponent
-  }]
-}];
+  { path: 'cadastro', component: CadastroComponent },
+  { path: 'login', component: LoginComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

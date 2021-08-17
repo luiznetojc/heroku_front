@@ -1,0 +1,25 @@
+<div class="p-3 mb-2 bg-primary bg-gradient" style="width: 100%; min-height: 100%;">
+<div class="col d-flex justify-content-center">
+  <div class="card border-primary mb-3" style="max-width: 20rem;" id="telalogin">
+    <div class="card-body">
+
+      <div class="alert alert-danger" *ngIf="notFounded == false">
+        Usuário ou senha não encontrado!
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label> <input type="text" [(ngModel)]="requestLogin.email" class="form-control"
+          id="email">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <input [(ngModel)]="requestLogin.senha" type="password" class="form-control" id="password"
+          [ngModelOptions]="{standalone: true}" required>
+        <div class="invalid-feedback">
+          Por favor, informe uma senha.
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline-primary" (click)="doLogin()">Entrar</button>
+    </div>
+  </div>
+</div>
+</div>
