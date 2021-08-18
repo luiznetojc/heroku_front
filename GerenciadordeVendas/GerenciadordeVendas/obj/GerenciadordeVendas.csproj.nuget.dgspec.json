@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luizg\\Documents\\processo-seletivo-logap-2021\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj": {}
+    "D:\\project\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luizg\\Documents\\processo-seletivo-logap-2021\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj": {
+    "D:\\project\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luizg\\Documents\\processo-seletivo-logap-2021\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj",
+        "projectUniqueName": "D:\\project\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj",
         "projectName": "GerenciadordeVendas",
-        "projectPath": "C:\\Users\\luizg\\Documents\\processo-seletivo-logap-2021\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj",
+        "projectPath": "D:\\project\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\GerenciadordeVendas.csproj",
         "packagesPath": "C:\\Users\\luizg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luizg\\Documents\\processo-seletivo-logap-2021\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\obj\\",
+        "outputPath": "D:\\project\\processo-seletivo-logap-2021\\back\\GerenciadordeVendas\\GerenciadordeVendas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\luizg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.0.7, )"

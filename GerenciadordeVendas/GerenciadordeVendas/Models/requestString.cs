@@ -8,7 +8,7 @@ namespace GerenciadordeVendas.Models
 {
     public class requestString
     {
-        [Required]
+ 
         public string String { get; set; }
 
     }

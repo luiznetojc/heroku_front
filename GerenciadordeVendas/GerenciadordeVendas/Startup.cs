@@ -1,7 +1,10 @@
+using GerenciadordeVendas.Context;
+using GerenciadordeVendas.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,11 +30,17 @@ namespace GerenciadordeVendas
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("Conexao")));
+            services.AddScoped<DataContext, DataContext>();
+            //services.AddScoped<ICrudRepository, CrudRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddControllers();
             services.AddSwaggerGen(config =>
             {
                 config.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "API DE PRODUTOS", Version = "v1" });
             });
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +59,7 @@ namespace GerenciadordeVendas
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(opcoes => opcoes.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();
