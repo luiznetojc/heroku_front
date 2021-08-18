@@ -1,0 +1,35 @@
+<div class="p-3 mb-2" style="width: 100%; min-height: 100%;">
+    <div class="col d-flex justify-content-center">
+      <div class="card border-primary mb-3" style="max-width: 20rem;" id="telalogin">
+        <div class="card-body">
+    
+          <div class="form-group">
+            <label for="string"><b>String Test</b></label> 
+            <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="str"
+            aria-label="Buscar...">
+            <h1 style="color:red; font-size:11px">Caso não carregar apertar enviar novamente</h1>
+          </div>
+          <button type="button" class="btn btn-outline-primary" (click)="send_string(str)">Enviar</button>
+        </div>
+        <div>
+          <section *ngIf="response">
+            <table style="margin: 10px;">
+            <tr>
+              <td>String enviada:</td>
+              <td>{{response.message.string}}</td>
+            </tr>
+            <tr>
+            <td>Letra Encontrada:</td>
+            <td>{{response.message.vogal}}</td>
+            </tr>
+            <tr>
+              <td>Tempo:</td>
+              <td>{{response.message.tempototal}}</td>
+            </tr>
+            </table>
+          </section>
+         
+        </div>
+      </div>
+    </div>
+    </div>
